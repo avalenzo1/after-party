@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView:View {
     var body: some View {
-        Text("Codename Chiventure")
-            .padding()
+        VStack {
+            TabView {
+                MapView()
+                    .badge(0)
+                    .tabItem {
+                        Label("Maps", systemImage: "tray.and.arrow.down.fill")
+                    }
+            }
+        }
     }
 }
 

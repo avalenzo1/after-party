@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ContentView:View {
+    init() {
+        UITabBar.appearance().barTintColor =
+        UIColor.blue
+    }
+    
     var body: some View {
-        VStack {
-            TabView {
-                MapView()
-                    .badge(0)
-                    .tabItem {
-                        Label("Maps", systemImage: "tray.and.arrow.down.fill")
-                    }
-            }
+        TabView {
+            MapView()
+                .badge(0)
+                .tabItem {
+                    Label("Explore", systemImage: "map.fill")
+                }
         }
     }
 }

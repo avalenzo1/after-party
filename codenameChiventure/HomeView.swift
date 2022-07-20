@@ -10,6 +10,8 @@ import SwiftUI
 class FormViewModel: ObservableObject {
     @State var firstName:String = ""
     @State var lastName:String = ""
+    @State var birthday:String = ""
+    @State var budget:String = ""
 }
 
 struct HomeView: View {
@@ -22,6 +24,8 @@ struct HomeView: View {
                     Section {
                         TextField("First Name", text: $viewModel.firstName)
                         TextField("Last Name", text: $viewModel.lastName)
+                        TextField("Birthday", text: $viewModel.birthday)
+                        TextField("Budget", text: $viewModel.budget)
                     }
                 }
             }

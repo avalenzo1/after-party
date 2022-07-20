@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    // 2.
     @State private var region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(
                     latitude: 41.883718,
@@ -20,7 +19,6 @@ struct MapView: View {
                 )
 
     var body: some View {
-        // 3.
         Map(coordinateRegion: $region)
             .edgesIgnoringSafeArea(.all)
     }

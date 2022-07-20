@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView:View {
-    init() {
-        UITabBar.appearance().barTintColor =
-        UIColor.blue
-    }
-    
     var body: some View {
         TabView {
+            HomeView()
+                .badge(1)
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
             MapView()
-                .badge(0)
                 .tabItem {
                     Label("Explore", systemImage: "map.fill")
                 }
@@ -27,5 +26,6 @@ struct ContentView:View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInterfaceOrientation(.portrait)
     }
 }

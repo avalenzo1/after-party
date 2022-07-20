@@ -12,6 +12,7 @@
 		4B035CA0288765450046E0CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B035C9F288765450046E0CA /* Assets.xcassets */; };
 		4B035CA3288765450046E0CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B035CA2288765450046E0CA /* Preview Assets.xcassets */; };
 		4B035CAA28876D750046E0CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B035CA928876D750046E0CA /* MapView.swift */; };
+		4B035CAC288771CC0046E0CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B035CAB288771CC0046E0CA /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		4B035C9F288765450046E0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B035CA2288765450046E0CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B035CA928876D750046E0CA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4B035CAB288771CC0046E0CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				4B035C9B288765420046E0CA /* codenameChiventureApp.swift */,
+				4B035CAB288771CC0046E0CA /* HomeView.swift */,
 				4B035C9D288765420046E0CA /* ContentView.swift */,
+				4B035CA928876D750046E0CA /* MapView.swift */,
 				4B035C9F288765450046E0CA /* Assets.xcassets */,
 				4B035CA1288765450046E0CA /* Preview Content */,
-				4B035CA928876D750046E0CA /* MapView.swift */,
 			);
 			path = codenameChiventure;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B035C9E288765420046E0CA /* ContentView.swift in Sources */,
+				4B035CAC288771CC0046E0CA /* HomeView.swift in Sources */,
 				4B035CAA28876D750046E0CA /* MapView.swift in Sources */,
 				4B035C9C288765420046E0CA /* codenameChiventureApp.swift in Sources */,
 			);

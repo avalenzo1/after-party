@@ -19,6 +19,10 @@ struct ContentView:View {
                 .tabItem {
                     Label("Explore", systemImage: "map.fill")
                 }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
         }
     }
 }

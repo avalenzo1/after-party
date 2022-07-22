@@ -10,8 +10,8 @@ import SwiftUI
 class FormViewModel: ObservableObject {
     @State var firstName:String = ""
     @State var lastName:String = ""
-    @State var birthday:String = ""
-    @State var budget:String = ""
+    @State var birthdate:Date = Date()
+    @State var budget:Double = 10
 }
 
 struct SettingsView: View {
@@ -27,11 +27,15 @@ struct SettingsView: View {
                     }
                     
                     Section {
-                        TextField("Birthday", text: $viewModel.birthday)
+                        // ...Date() means that you can't be born in the future.
+                        
+                        DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
                     }
                     
                     Section {
-                        TextField("Budget", text: $viewModel.budget)
+                        Text("Budget")
+                        Slider(value: $viewModel.budget, in: 0...100, step: 5)
+                            .accentColor(.red)
                     }
                 }
             }

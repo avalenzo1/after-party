@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ContentView:View {
+    init() {
+        // Changes the color of the TabView Color to white
+//        UITabBar.appearance().backgroundColor = UIColor.white
+
+    }
+    
     var body: some View {
         TabView {
             HomeView()

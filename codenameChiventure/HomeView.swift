@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel = FormViewModel()
-    
     var body: some View {
-        NavigationView {
-            VStack {
-                
-            }
-            .navigationTitle("Home")
+        VStack {
+            
         }
     }
 }

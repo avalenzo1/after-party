@@ -7,15 +7,17 @@
 
 import SwiftUI
 
-class FormViewModel: ObservableObject {
+// TO DO: Figure out a way to save these inputs?
+// Maybe when you open the app for the first time you answer these and they stay in settings
+
+class SettingsFormViewModel: ObservableObject {
     @State var firstName:String = ""
     @State var lastName:String = ""
     @State var birthdate:Date = Date()
-    @Published var budget:Double = 0.0
 }
 
 struct SettingsView: View {
-    @StateObject var viewModel = FormViewModel()
+    @StateObject var viewModel = SettingsFormViewModel()
     
     var body: some View {
         VStack {
@@ -29,12 +31,6 @@ struct SettingsView: View {
                     // ...Date() means that you can't be born in the future.
                     
                     DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
-                }
-                
-                Section {
-                    TextField("Budget", value: $viewModel.budget, formatter: NumberFormatter())
-                    Slider(value: $viewModel.budget, in: 0.0...100.0, step: 5)
-                        .accentColor(.red)
                 }
             }
         }

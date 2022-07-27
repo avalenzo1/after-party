@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView:View {
+    @State public var UITabBarColor = UIColor.clear
+    
     init() {
         // Changes the color of the TabView Color to white
-//        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UITabBarColor
 
     }
     
@@ -24,6 +26,10 @@ struct ContentView:View {
             MapView()
                 .tabItem {
                     Label("Explore", systemImage: "map.fill")
+                    .onTapGesture {
+                        UITabBarColor = UIColor.white
+                        print("SDGS")
+                    }
                 }
             SettingsView()
                 .tabItem {
@@ -36,7 +42,6 @@ struct ContentView:View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
             .previewInterfaceOrientation(.portrait)
     }
 }

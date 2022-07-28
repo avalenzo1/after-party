@@ -36,6 +36,7 @@ struct SettingsView: View {
                         
                         DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
                             .disabled(formIsEditable)
+                        
                     }
                 }
             }

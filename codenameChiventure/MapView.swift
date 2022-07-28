@@ -16,8 +16,8 @@ struct MapView: View {
                     latitude: 41.883718,
                     longitude: -87.632382),
                 span: MKCoordinateSpan(
-                    latitudeDelta: 5.0,
-                    longitudeDelta: 5.0)
+                    latitudeDelta: 0.25,
+                    longitudeDelta: 0.25)
                 )
 
     var body: some View {

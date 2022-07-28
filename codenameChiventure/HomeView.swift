@@ -9,7 +9,7 @@ import SwiftUI
 import Sliders
 
 enum Category: String, CaseIterable, Identifiable {
-    case any, park, museum
+    case any, park, museum, bar
     var id: Self { self }
 }
 
@@ -69,6 +69,7 @@ struct HomeView: View {
                         Text("Any").tag(Category.any)
                         Text("Park").tag(Category.museum)
                         Text("Museum").tag(Category.park)
+                        Text("Museum").tag(Category.bar)
                     }
                 }
                 

@@ -23,8 +23,6 @@ struct HomeView: View {
     @StateObject var viewModel = HomeFormViewModel()
     @State var range = 0.0...20.0
     
-    var data = ["Free", "< $10", "$10-20","$20-50", "$50-100", "100+"]
-    
     var body: some View {
         NavigationView {
             Form {
@@ -33,28 +31,6 @@ struct HomeView: View {
                     Text("Below are the types of Budget Inputs")
                     
                     RangeSlider(range: $range, in: 0...100, step: 1)
-                    
-                    ZStack {
-                        Rectangle()
-                            .fill(.red)
-                            .frame(width: .infinity, height: 3)
-                        
-                        HStack {
-                            ForEach(data, id: \.self) { item in
-                                Button(action: {
-                                    
-                                }, label: {
-                                    ZStack {
-                                        Circle()
-                                            .frame(width:.infinity)
-                                            .font(.caption)
-                                        Text(item)
-                                            .foregroundColor(.white)
-                                    }
-                                })
-                            }
-                        }
-                    }
                 }
                 
                 Section(header: Text("Squad")) {
@@ -69,7 +45,7 @@ struct HomeView: View {
                         Text("Any").tag(Category.any)
                         Text("Park").tag(Category.museum)
                         Text("Museum").tag(Category.park)
-                        Text("Museum").tag(Category.bar)
+                        Text("Bar").tag(Category.bar)
                     }
                 }
                 

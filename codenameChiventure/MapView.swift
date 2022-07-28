@@ -22,7 +22,7 @@ struct MapView: View {
 
     var body: some View {
         
-        Map(coordinateRegion: $region)
+        Map(coordinateRegion: $region, showsUserLocation: true)
             .edgesIgnoringSafeArea(.all)
     }
 }

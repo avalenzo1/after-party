@@ -8,28 +8,24 @@
 import SwiftUI
 
 struct ContentView:View {
-    @State public var UITabBarColor = UIColor.clear
+    var tabColor = UIColor.clear
     
     init() {
         // Changes the color of the TabView Color to white
-        UITabBar.appearance().backgroundColor = UITabBarColor
+        UITabBar.appearance().backgroundColor = tabColor
 
     }
     
     var body: some View {
         TabView {
             HomeView()
-                .badge(1)
+                .badge(2)
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
             MapView()
                 .tabItem {
                     Label("Explore", systemImage: "map.fill")
-                    .onTapGesture {
-                        UITabBarColor = UIColor.white
-                        print("SDGS")
-                    }
                 }
             SettingsView()
                 .tabItem {

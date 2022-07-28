@@ -14,6 +14,7 @@
 		4B035CAA28876D750046E0CA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B035CA928876D750046E0CA /* MapView.swift */; };
 		4B035CAC288771CC0046E0CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B035CAB288771CC0046E0CA /* HomeView.swift */; };
 		4B85D67D288A1D0F007D21FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85D67C288A1D0F007D21FB /* SettingsView.swift */; };
+		4BB0E92628923761008DCF24 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB0E92528923761008DCF24 /* Sliders */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB0E92628923761008DCF24 /* Sliders in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,9 @@
 			dependencies = (
 			);
 			name = codenameChiventure;
+			packageProductDependencies = (
+				4BB0E92528923761008DCF24 /* Sliders */,
+			);
 			productName = codenameChiventure;
 			productReference = 4B035C98288765420046E0CA /* codenameChiventure.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 4B035C8F288765420046E0CA;
+			packageReferences = (
+				4BB0E92428923761008DCF24 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
+			);
 			productRefGroup = 4B035C99288765420046E0CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4BB0E92428923761008DCF24 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BB0E92528923761008DCF24 /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BB0E92428923761008DCF24 /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B035C90288765420046E0CA /* Project object */;
 }

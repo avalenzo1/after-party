@@ -6,49 +6,84 @@
 //
 
 import SwiftUI
+import Sliders
 
-enum Flavor: String, CaseIterable, Identifiable {
-    case chocolate, vanilla, strawberry
+enum Category: String, CaseIterable, Identifiable {
+    case any, park, museum
     var id: Self { self }
 }
 
 class HomeFormViewModel: ObservableObject {
     @Published var budget:Double = 0.0
     @State var squadSize:Int = 0
-    @State var category:String = ""
-    @State var selectedFlavor: Flavor = .chocolate
+    @Published var category:Category = .any 
 }
 
 struct HomeView: View {
     @StateObject var viewModel = HomeFormViewModel()
+    @State var range = 0.0...20.0
+    
+    var data = ["Free", "< $10", "$10-20","$20-50", "$50-100", "100+"]
     
     var body: some View {
         NavigationView {
-            Section {
-                // Budget Field
-                
-//                TextField("Budget", value: $viewModel.budget, formatter: NumberFormatter())
-                Slider(value: $viewModel.budget, in: 0.0...100.0, step: 1)
-                    .accentColor(.red)
-            }
-            
-            Section {
-                // People Field
-                
-                TextField("Total number of people", value: $viewModel.squadSize, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
-            }
-            
-            Section {
-                List {
-                    Picker("Flavor", selection: $viewModel.selectedFlavor) {
-                        Text("Chocolate").tag(Flavor.chocolate)
-                        Text("Vanilla").tag(Flavor.vanilla)
-                        Text("Strawberry").tag(Flavor.strawberry)
+            Form {
+                Section(header: Text("Budget")) {
+                    // Budget Field
+                    Text("Below are the types of Budget Inputs")
+                    
+                    RangeSlider(range: $range, in: 0...100, step: 1)
+                    
+                    ZStack {
+                        Rectangle()
+                            .fill(.red)
+                            .frame(width: .infinity, height: 3)
+                        
+                        HStack {
+                            ForEach(data, id: \.self) { item in
+                                Button(action: {
+                                    
+                                }, label: {
+                                    ZStack {
+                                        Circle()
+                                            .frame(width:.infinity)
+                                            .font(.caption)
+                                        Text(item)
+                                            .foregroundColor(.white)
+                                    }
+                                })
+                            }
+                        }
                     }
                 }
+                
+                Section(header: Text("Squad")) {
+                    // People Field
+                    
+                    TextField("Total number of people", value: $viewModel.squadSize, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                }
+                
+                Section(header: Text("Category")) {
+                    Picker("Category", selection: $viewModel.category) {
+                        Text("Any").tag(Category.any)
+                        Text("Park").tag(Category.museum)
+                        Text("Museum").tag(Category.park)
+                    }
+                }
+                
+                Button(action: {
+                    // TODO: Redirect User to TabView: MapView
+                    
+                }, label: {
+                    Text("Find the fun! 🎉")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                })
+                .tint(.red)
+                .buttonStyle(.borderedProminent)
+                .listRowBackground(Color.red)
             }
+            .navigationTitle("Home")
         }
-        .navigationTitle("Home")
     }
 }

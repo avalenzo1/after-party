@@ -18,20 +18,32 @@ class SettingsFormViewModel: ObservableObject {
 
 struct SettingsView: View {
     @StateObject var viewModel = SettingsFormViewModel()
+    @State var formIsEditable:Bool = true
     
     var body: some View {
-        VStack {
-            Form {
-                Section {
-                    TextField("First Name", text: $viewModel.firstName)
-                    TextField("Last Name", text: $viewModel.lastName)
-                }
-                
-                Section {
-                    // ...Date() means that you can't be born in the future.
+        NavigationView {
+            VStack {
+                Form {
+                    Section {
+                        TextField("First Name", text: $viewModel.firstName)
+                            .disabled(formIsEditable)
+                        TextField("Last Name", text: $viewModel.lastName)
+                            .disabled(formIsEditable)
+                    }
                     
-                    DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
+                    Section {
+                        // ...Date() means that you can't be born in the future.
+                        
+                        DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
+                            .disabled(formIsEditable)
+                    }
                 }
+            }
+            .navigationTitle("Settings")
+            .toolbar {
+                // TODO: Make EditButton a convert disabled bool to false
+                
+                EditButton()
             }
         }
     }

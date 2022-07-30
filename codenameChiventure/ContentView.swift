@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView:View {
     var tabColor = UIColor.clear
+    @StateObject var router = TabRouter()
     
     init() {
         // Changes the color of the TabView Color to white
@@ -17,20 +19,30 @@ struct ContentView:View {
     }
     
     var body: some View {
-        TabView {
-            HomeView()
-                .badge(2)
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
+        
+        ZStack(alignment: .bottom) {
+            Group {
+                switch router.tab {
+                    case .HomeView:
+                        HomeView()
+                        .environmentObject(router)
+                    case .MapView:
+                        MapView()
+                        .environmentObject(router)
+                    case .SettingsView:
+                        SettingsView()
+                        .environmentObject(router)
                 }
-            MapView()
-                .tabItem {
-                    Label("Explore", systemImage: "map.fill")
-                }
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
-                }
+            }
+            
+            let tabItems = [
+                TabItem(text: "Home", icon: "house", tab: .HomeView),
+                TabItem(text: "Explore", icon: "map", tab: .MapView),
+                TabItem(text: "Settings", icon: "gearshape", tab: .SettingsView),
+            ]
+
+            
+            AppTabView(router: router, tabItems: tabItems)
         }
     }
 }

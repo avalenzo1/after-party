@@ -20,6 +20,7 @@ class HomeFormViewModel: ObservableObject {
 }
 
 struct HomeView: View {
+    @EnvironmentObject var router:TabRouter
     @StateObject var viewModel = HomeFormViewModel()
     @State var range = 0.0...20.0
     
@@ -51,7 +52,7 @@ struct HomeView: View {
                 
                 Button(action: {
                     // TODO: Redirect User to TabView: MapView
-                    
+                    router.change(to: .MapView)
                 }, label: {
                     Text("Find the fun! 🎉")
                     .frame(minWidth: 0, maxWidth: .infinity)

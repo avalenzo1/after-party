@@ -17,6 +17,7 @@ class SettingsFormViewModel: ObservableObject {
 }
 
 struct SettingsView: View {
+    @EnvironmentObject var router:TabRouter
     @StateObject var viewModel = SettingsFormViewModel()
     @State var formIsEditable:Bool = true
     

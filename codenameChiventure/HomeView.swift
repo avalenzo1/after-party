@@ -25,6 +25,7 @@ struct HomeView: View {
     @State var range = 0.0...20.0
     
     var body: some View {
+        
         NavigationView {
             Form {
                 Section(header: Text("Budget")) {
@@ -33,6 +34,7 @@ struct HomeView: View {
                     
                     RangeSlider(range: $range, in: 0...100, step: 1)
                 }
+
                 
                 Section(header: Text("Squad")) {
                     // People Field
@@ -57,9 +59,9 @@ struct HomeView: View {
                     Text("Find the fun! 🎉")
                     .frame(minWidth: 0, maxWidth: .infinity)
                 })
-                .tint(.red)
+                .tint(.clear)
                 .buttonStyle(.borderedProminent)
-                .listRowBackground(Color.red)
+                .listRowBackground(pallete[0])
             }
             .navigationTitle("Home")
         }

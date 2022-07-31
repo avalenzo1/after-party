@@ -31,10 +31,6 @@ struct TabItem: Identifiable {
 struct AppTabView: View {
     var router:TabRouter
     var tabItems:Array<TabItem>
-    let pallete:Array<LinearGradient> = [
-        LinearGradient(colors: [.pink, .red], startPoint: .topLeading, endPoint: .bottomTrailing),
-        LinearGradient(colors: [.primary, .secondary], startPoint: .topTrailing, endPoint: .bottomLeading)
-    ]
     
     var body: some View {
         HStack {
@@ -60,7 +56,7 @@ struct AppTabView: View {
         }
         .padding(.top, 15)
         .frame(height: 100, alignment: .top)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 25))
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 25))
         .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
     }

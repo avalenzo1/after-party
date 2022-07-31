@@ -16,30 +16,33 @@ struct MapView: View {
     @State private var isPresented:Bool = false
 
     var body: some View {
-        VStack {
-            ZStack(alignment: .top) {
-                Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-                    .edgesIgnoringSafeArea(.all)
-                    .onAppear {
-                        viewModel.checkIfLocationServicesIsEnabled()
-                    }
-                
-                HStack {
-                    Button {
-                        isPresented = !isPresented
-                    } label: {
-                        Label("Show Results", systemImage: "mappin.and.ellipse")
-                            .padding()
-                    }
+        ZStack(alignment: .top) {
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+                .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    viewModel.checkIfLocationServicesIsEnabled()
                 }
-                .padding(10)
-                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 25))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            HStack {
+                Text("0 Results")
+                    .foregroundColor(.secondary)
+                
+                Button {
+                    isPresented = !isPresented
+                } label: {
+                    Label("Show Results", systemImage: "mappin.and.ellipse")
+                        .badge(5)
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
             }
-            .sheet(isPresented: $isPresented, content: {
-                ResultsView()
-            })
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(.thinMaterial)
         }
+        .sheet(isPresented: $isPresented, content: {
+            ResultsView()
+        })
     }
 }
 
@@ -51,14 +54,19 @@ struct ResultsView: View {
             Color.clear
                 .ignoresSafeArea()
             
-            Button(role: .cancel, action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "chevron.down")
-                    .font(.largeTitle)
-                    .foregroundColor(.secondary)
-                    .padding(25)
-            })
+            VStack {
+                Button(role: .cancel, action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "chevron.down")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                        .padding(20)
+                })
+                
+                Text("Places Around You")
+                    .font(.title)
+            }
         }
     }
 }
@@ -105,8 +113,8 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
 //                region = MKCoordinateRegion(
 //                    center: locationManager.location!.coordinate,
 //                    span: MKCoordinateSpan(
-//                        latitudeDelta: 1.5,
-//                        longitudeDelta: 1.5
+//                        latitudeDelta: 0.025,
+//                        longitudeDelta: 0.025
 //                    )
 //                )
             @unknown default:

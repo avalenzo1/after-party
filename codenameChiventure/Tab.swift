@@ -31,6 +31,10 @@ struct TabItem: Identifiable {
 struct AppTabView: View {
     var router:TabRouter
     var tabItems:Array<TabItem>
+    let pallete:Array<LinearGradient> = [
+        LinearGradient(colors: [.pink, .red], startPoint: .topLeading, endPoint: .bottomTrailing),
+        LinearGradient(colors: [.primary, .secondary], startPoint: .topTrailing, endPoint: .bottomLeading)
+    ]
     
     var body: some View {
         HStack {
@@ -41,7 +45,6 @@ struct AppTabView: View {
                 } label: {
                     VStack {
                         Image(systemName: item.icon)
-                            .symbolVariant(.fill)
                             .font(.system(size: 22))
                             .frame(height: 25)
                         Text(item.text)
@@ -49,7 +52,9 @@ struct AppTabView: View {
 
                     }
                     .frame(maxWidth: .infinity)
-                    .foregroundColor(router.tab == item.tab ? .primary : .secondary)
+                    .foregroundStyle(
+                        (router.tab == item.tab ? pallete[0] : pallete[1])
+                    )
                 }
             }
         }

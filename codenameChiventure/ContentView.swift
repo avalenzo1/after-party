@@ -9,13 +9,10 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView:View {
-    var tabColor = UIColor.clear
     @StateObject var router = TabRouter()
     
     init() {
-        // Changes the color of the TabView Color to white
-        UITabBar.appearance().backgroundColor = tabColor
-
+        
     }
     
     var body: some View {
@@ -35,7 +32,7 @@ struct ContentView:View {
                 }
             }
             
-            let tabItems = [
+            let tabItems:[TabItem] = [
                 TabItem(text: "Home", icon: "house", tab: .HomeView),
                 TabItem(text: "Explore", icon: "map", tab: .MapView),
                 TabItem(text: "Settings", icon: "gearshape", tab: .SettingsView),

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MapKit
-import HalfASheet
 
 // TODO: Add Pins of Surrounding Places?
 
@@ -17,30 +16,49 @@ struct MapView: View {
     @State private var isPresented:Bool = false
 
     var body: some View {
-        ZStack {
-            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-                .edgesIgnoringSafeArea(.all)
-                .onAppear {
-                    viewModel.checkIfLocationServicesIsEnabled()
+        VStack {
+            ZStack(alignment: .top) {
+                Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+                    .edgesIgnoringSafeArea(.all)
+                    .onAppear {
+                        viewModel.checkIfLocationServicesIsEnabled()
+                    }
+                
+                HStack {
+                    Button {
+                        isPresented = !isPresented
+                    } label: {
+                        Label("Show Results", systemImage: "mappin.and.ellipse")
+                            .padding()
+                    }
                 }
-            HalfASheet(isPresented: $isPresented, title: "Places for you") {
-                List {
-                    Text("A List Item")
-                    Text("A Second List Item")
-                    Text("A Third List Item")
-                }
+                .padding(10)
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 25))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
-            .ignoresSafeArea()
+            .sheet(isPresented: $isPresented, content: {
+                ResultsView()
+            })
+        }
+    }
+}
+
+struct ResultsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            Color.clear
+                .ignoresSafeArea()
             
-            HStack(alignment: .top) {
-                Button {
-                    isPresented = !isPresented
-                } label: {
-                    Label("Show Results", systemImage: "flag.fill")
-                        .padding()
-                        .background(.regularMaterial)
-                }
-            }
+            Button(role: .cancel, action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.down")
+                    .font(.largeTitle)
+                    .foregroundColor(.secondary)
+                    .padding(25)
+            })
         }
     }
 }
@@ -84,13 +102,13 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
                print("Boi 👏 😤 👋")
             case .authorizedAlways, .authorizedWhenInUse:
                 print("test")
-                region = MKCoordinateRegion(
-                    center: locationManager.location!.coordinate,
-                    span: MKCoordinateSpan(
-                        latitudeDelta: 1.5,
-                        longitudeDelta: 1.5
-                    )
-                )
+//                region = MKCoordinateRegion(
+//                    center: locationManager.location!.coordinate,
+//                    span: MKCoordinateSpan(
+//                        latitudeDelta: 1.5,
+//                        longitudeDelta: 1.5
+//                    )
+//                )
             @unknown default:
                 break
                        

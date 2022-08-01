@@ -17,6 +17,7 @@
 		4B4E2C822894D4920036F633 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E2C812894D4920036F633 /* Tab.swift */; };
 		4B609F732896344D00EEC25F /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B609F722896344D00EEC25F /* ColorPallete.swift */; };
 		4B609F7828983C2500EEC25F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B609F7728983C2500EEC25F /* ExploreView.swift */; };
+		4B609F7C289840FC00EEC25F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B609F7B289840FC00EEC25F /* Api.swift */; };
 		4B85D67D288A1D0F007D21FB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85D67C288A1D0F007D21FB /* SettingsView.swift */; };
 		4BA87D3528945CA900C95F3B /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = 4BA87D3428945CA900C95F3B /* HalfASheet */; };
 		4BB0E92628923761008DCF24 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB0E92528923761008DCF24 /* Sliders */; };
@@ -33,6 +34,7 @@
 		4B4E2C812894D4920036F633 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4B609F722896344D00EEC25F /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		4B609F7728983C2500EEC25F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		4B609F7B289840FC00EEC25F /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4B85D67C288A1D0F007D21FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				4B035C9F288765450046E0CA /* Assets.xcassets */,
 				4B035CA1288765450046E0CA /* Preview Content */,
 				4B609F762896C61900EEC25F /* Packages */,
+				4B609F7A2898408F00EEC25F /* Api */,
 				4B035C9B288765420046E0CA /* codenameChiventureApp.swift */,
 				4B035C9D288765420046E0CA /* ContentView.swift */,
 				4B035CAB288771CC0046E0CA /* HomeView.swift */,
@@ -97,6 +100,14 @@
 				4B4E2C812894D4920036F633 /* Tab.swift */,
 			);
 			path = Packages;
+			sourceTree = "<group>";
+		};
+		4B609F7A2898408F00EEC25F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4B609F7B289840FC00EEC25F /* Api.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B609F7C289840FC00EEC25F /* Api.swift in Sources */,
 				4B609F732896344D00EEC25F /* ColorPallete.swift in Sources */,
 				4B85D67D288A1D0F007D21FB /* SettingsView.swift in Sources */,
 				4B035C9E288765420046E0CA /* ContentView.swift in Sources */,

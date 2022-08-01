@@ -101,7 +101,7 @@ struct ResultCard: View {
 
 struct ResultsView: View {
     @Environment(\.presentationMode) var presentationMode
-    let results: Array<Place> = [
+    let places: Array<Place> = [
         Place(name: "Irving Park", category: .park, address: "2741 W Montrose Ave, Chicago, IL 60618"),
         Place(name: "Irving Park", category: .park, address: "2741 W Montrose Ave, Chicago, IL 60618"),
         Place(name: "Irving Park", category: .park, address: "2741 W Montrose Ave, Chicago, IL 60618"),
@@ -129,8 +129,8 @@ struct ResultsView: View {
                         .font(.title)
                     
                     VStack(spacing: 10) {
-                        ForEach(results) { result in
-                            ResultCard(Place: result)
+                        ForEach(places) { place in
+                            ResultCard(Place: place)
                         }
                     }
                 }

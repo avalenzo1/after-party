@@ -37,7 +37,6 @@ struct ContentView:View {
                 TabItem(text: "Explore", icon: "map", tab: .MapView),
                 TabItem(text: "Settings", icon: "gearshape", tab: .SettingsView),
             ]
-
             
             AppTabView(router: router, tabItems: tabItems)
         }

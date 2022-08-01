@@ -32,7 +32,6 @@
 		4B4E2C812894D4920036F633 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4B609F722896344D00EEC25F /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		4B85D67C288A1D0F007D21FB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4BE3A48F2894C1E600E17A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				4B609F762896C61900EEC25F /* Packages */,
-				4BE3A48F2894C1E600E17A1F /* Info.plist */,
 				4B035C9B288765420046E0CA /* codenameChiventureApp.swift */,
 				4B035C9D288765420046E0CA /* ContentView.swift */,
 				4B035CAB288771CC0046E0CA /* HomeView.swift */,
@@ -92,8 +90,8 @@
 		4B609F762896C61900EEC25F /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				4B4E2C812894D4920036F633 /* Tab.swift */,
 				4B609F722896344D00EEC25F /* ColorPallete.swift */,
+				4B4E2C812894D4920036F633 /* Tab.swift */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -318,7 +316,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,7 +348,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

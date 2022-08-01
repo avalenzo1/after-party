@@ -13,10 +13,16 @@ enum Category: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
+enum Transportation: String, CaseIterable, Identifiable {
+    case driving, transit, cycling, walking
+    var id: Self { self }
+}
+
 class HomeFormViewModel: ObservableObject {
     @Published var budget:Double = 0.0
     @State var squadSize:Int = 0
-    @Published var category:Category = .any 
+    @Published var category:Category = .any
+    @Published var transportation:Transportation = .walking
 }
 
 struct HomeView: View {
@@ -28,7 +34,7 @@ struct HomeView: View {
         
         NavigationView {
             Form {
-                Section(header: Text("Budget")) {
+                Section(header: Text("Budget *")) {
                     // Budget Field
                     Text("Below are the types of Budget Inputs")
                     
@@ -36,7 +42,7 @@ struct HomeView: View {
                 }
 
                 
-                Section(header: Text("Squad")) {
+                Section(header: Text("Squad *")) {
                     // People Field
                     
                     TextField("Total number of people", value: $viewModel.squadSize, formatter: NumberFormatter())
@@ -49,6 +55,15 @@ struct HomeView: View {
                         Text("Park").tag(Category.museum)
                         Text("Museum").tag(Category.park)
                         Text("Bar").tag(Category.bar)
+                    }
+                }
+                
+                Section(header: Text("Transportation")) {
+                    Picker("Transportation", selection: $viewModel.transportation) {
+                        Text("Driving").tag(Transportation.driving)
+                        Text("Transit").tag(Transportation.transit)
+                        Text("Cycling").tag(Transportation.cycling)
+                        Text("Walking").tag(Transportation.walking)
                     }
                 }
                 

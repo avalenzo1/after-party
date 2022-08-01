@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let pallete:Array<LinearGradient> = [
+let palette:Array<LinearGradient> = [
     LinearGradient(colors: [.yellow, .red], startPoint: .topLeading, endPoint: .bottomTrailing),
     LinearGradient(colors: [.primary, .secondary], startPoint: .topTrailing, endPoint: .bottomLeading)
 ]

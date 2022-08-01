@@ -76,7 +76,7 @@ struct HomeView: View {
                 })
                 .tint(.clear)
                 .buttonStyle(.borderedProminent)
-                .listRowBackground(pallete[0])
+                .listRowBackground(palette[0])
             }
             .navigationTitle("Home")
         }

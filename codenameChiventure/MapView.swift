@@ -10,25 +10,40 @@ import MapKit
 
 // TODO: Add Pins of Surrounding Places?
 
+struct MyAnnotationItem: Identifiable {
+    var coordinate: CLLocationCoordinate2D
+    let id = UUID()
+}
+
+var annotationItems: [MyAnnotationItem] = [
+    MyAnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 41.883728, longitude: -87.632482)),
+    MyAnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 41.883729, longitude: -87.632483)),
+]
+
 struct MapView: View {
     @EnvironmentObject var router:TabRouter
     @State var viewModel = ContentViewModel()
     @State private var isPresented:Bool = false
     
+    init() {
+        viewModel.checkIfLocationServicesIsEnabled()
+    }
+    
     var body: some View {
         ZStack(alignment: .top) {
-            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-                .edgesIgnoringSafeArea(.all)
-                .onAppear {
-                    viewModel.checkIfLocationServicesIsEnabled()
-                }
+            Map(coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                annotationItems: annotationItems) {item in
+                MapPin(coordinate: item.coordinate)
+            }
+            .edgesIgnoringSafeArea(.all)
             
             HStack {
                 Button {
                     isPresented = !isPresented
                 } label: {
                     Text("\(20)")
-                        .foregroundStyle(pallete[0])
+                        .foregroundStyle(palette[0])
                     Text("Pins")
                     Image(systemName: "chevron.up")
                 }
@@ -42,6 +57,7 @@ struct MapView: View {
                     Image(systemName: "location")
                 }
                 .buttonStyle(.bordered)
+                .buttonBorderShape(.roundedRectangle)
             }
             .frame(maxWidth: .infinity)
             .padding()
@@ -157,14 +173,13 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
         case .denied:
             print("Boi 👏 😤 👋")
         case .authorizedAlways, .authorizedWhenInUse:
-            region = MKCoordinateRegion(
-                // Thread 1: Fatal error: Unexpectedly found nil while unwrapping an Optional value
-                center: locationManager.location!.coordinate,
-                span: MKCoordinateSpan(
+            region.center = locationManager.location!.coordinate
+            region.span = MKCoordinateSpan(
                     latitudeDelta: 0.025,
                     longitudeDelta: 0.025
                 )
-            )
+            
+            print("if this shows in console, then region SHOULD update")
         @unknown default:
             break
             

@@ -49,7 +49,7 @@ struct AppTabView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(
-                        (router.tab == item.tab ? pallete[0] : pallete[1])
+                        (router.tab == item.tab ? palette[0] : palette[1])
                     )
                 }
             }

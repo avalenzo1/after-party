@@ -1,30 +1,57 @@
-////
-////  Api.swift
-////  codenameChiventure
-////
-////  Created by Anthony Valenzo on 8/1/22.
-////
 //
-//import Foundation
+//  Api.swift
+//  codenameChiventure
 //
-//struct Place: Codable, Identifiable {
-//    var id = UUID()
-//    let name: String
-////    let category: Category
-////    let address: String // TODO: Convert to Address
-////    var image: Image?
-//}
-//class apiCall {
-//    func getPlaces(completion:@escaping ([Place]) -> ()) {
-//        guard let url = URL(string: "https://codename-chiven.glitch.me/") else { return }
-//        URLSession.shared.dataTask(with: url) { (data, _, _) in
-//            let places = try! JSONDecoder().decode([Place].self, from: data!)
-//            print(places)
-//            
-//            DispatchQueue.main.async {
-//                completion(places)
-//            }
-//        }
-//        .resume()
-//    }
-//}
+//  Created by Anthony Valenzo on 8/1/22.
+//
+
+import Foundation
+
+struct PlaceJSON: Hashable, Codable {
+    let name: String
+    let category: String
+    let imageURL: String
+    let address: String
+    let coordinate: Coordinate
+}
+
+struct Coordinate: Hashable, Codable {
+    let latitude, longitude: Double
+}
+
+class APIViewModel: ObservableObject {
+    @Published var places: [PlaceJSON] = []
+    @Published var isLoading: Bool = true
+    
+    func fetchPlaces() {
+        guard let url = URL(string: "https://codename-chiven.glitch.me/places") else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _,
+            error in
+            guard let data = data, error == nil else {
+                return
+            }
+ 
+            // Convert to JSON
+            
+            do {
+                let places = try JSONDecoder().decode([PlaceJSON].self, from: data)
+                DispatchQueue.main.async {
+                    self?.places = places
+                    self?.isLoading = false
+                    print("dog water")
+                    print(self?.places)
+                }
+            } catch {
+                print("An error occured!")
+                print("\(error)")
+            }
+        }
+        
+        print("BRUH")
+        
+        task.resume() 
+    }
+}

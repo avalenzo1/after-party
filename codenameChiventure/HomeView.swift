@@ -8,8 +8,13 @@
 import SwiftUI
 import Sliders
 
-enum Category: String, CaseIterable, Identifiable {
-    case any, park, museum, bar
+enum Category: String {
+    case any = "any",
+         park = "park",
+         museum = "museum",
+         bar = "bar",
+         skyscraper = "skyscraper",
+         other = "other"
     var id: Self { self }
 }
 
@@ -55,6 +60,7 @@ struct HomeView: View {
                         Text("Park").tag(Category.museum)
                         Text("Museum").tag(Category.park)
                         Text("Bar").tag(Category.bar)
+                        Text("Other").tag(Category.other)
                     }
                 }
                 
@@ -69,7 +75,7 @@ struct HomeView: View {
                 
                 Button(action: {
                     // TODO: Redirect User to TabView: MapView
-                    router.change(to: .MapView)
+                    router.change(to: .ExploreView)
                 }, label: {
                     Text("Find the fun! 🎉")
                     .frame(minWidth: 0, maxWidth: .infinity)

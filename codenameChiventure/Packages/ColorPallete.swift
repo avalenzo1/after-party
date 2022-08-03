@@ -8,6 +8,6 @@
 import SwiftUI
 
 let palette:Array<LinearGradient> = [
-    LinearGradient(colors: [.yellow, .red], startPoint: .topLeading, endPoint: .bottomTrailing),
+    LinearGradient(colors: [.indigo, .cyan], startPoint: .topLeading, endPoint: .bottomTrailing),
     LinearGradient(colors: [.primary, .secondary], startPoint: .topTrailing, endPoint: .bottomLeading)
 ]

@@ -19,7 +19,7 @@ class SettingsFormViewModel: ObservableObject {
 struct SettingsView: View {
     @EnvironmentObject var router:TabRouter
     @StateObject var viewModel = SettingsFormViewModel()
-    @State var formIsEditable:Bool = true
+    @State var formIsDisabled:Bool = true
     
     var body: some View {
         NavigationView {
@@ -27,16 +27,16 @@ struct SettingsView: View {
                 Form {
                     Section {
                         TextField("First Name", text: $viewModel.firstName)
-                            .disabled(formIsEditable)
+                            .disabled(formIsDisabled)
                         TextField("Last Name", text: $viewModel.lastName)
-                            .disabled(formIsEditable)
+                            .disabled(formIsDisabled)
                     }
                     
                     Section {
                         // ...Date() means that you can't be born in the future.
                         
                         DatePicker("Birthdate", selection: $viewModel.birthdate, in: ...Date(), displayedComponents: .date)
-                            .disabled(formIsEditable)
+                            .disabled(formIsDisabled)
                         
                     }
                 }
@@ -45,7 +45,11 @@ struct SettingsView: View {
             .toolbar {
                 // TODO: Make EditButton a convert disabled bool to false
                 
-                EditButton()
+                Button(formIsDisabled ? "Edit" : "Done") {
+                    formIsDisabled = !formIsDisabled
+                }
+                .tint(.accentColor)
+                .buttonBorderShape(.capsule)
             }
         }
     }

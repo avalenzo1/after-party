@@ -9,12 +9,12 @@ import SwiftUI
 
 enum TabView {
     case HomeView
-    case MapView
+    case ExploreView
     case SettingsView
 }
 
 final class TabRouter: ObservableObject {
-    @Published var tab: TabView = .MapView
+    @Published var tab: TabView = .ExploreView
     
     func change(to TabView: TabView) {
         self.tab = TabView
@@ -56,7 +56,10 @@ struct AppTabView: View {
         }
         .padding(.top, 15)
         .frame(height: 100, alignment: .top)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 25))
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(.thinMaterial)
+                .cornerRadius(20, corners: [.topLeft, .topRight])        )
         .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
     }

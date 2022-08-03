@@ -23,8 +23,8 @@ struct ContentView:View {
                     case .HomeView:
                         HomeView()
                         .environmentObject(router)
-                    case .MapView:
-                        MapView()
+                    case .ExploreView:
+                        ExploreView()
                         .environmentObject(router)
                     case .SettingsView:
                         SettingsView()
@@ -34,7 +34,7 @@ struct ContentView:View {
             
             let tabItems:[TabItem] = [
                 TabItem(text: "Home", icon: "house", tab: .HomeView),
-                TabItem(text: "Explore", icon: "map", tab: .MapView),
+                TabItem(text: "Explore", icon: "map", tab: .ExploreView),
                 TabItem(text: "Settings", icon: "gearshape", tab: .SettingsView),
             ]
             

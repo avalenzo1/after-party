@@ -339,6 +339,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "After Party";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,6 +372,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "After Party";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

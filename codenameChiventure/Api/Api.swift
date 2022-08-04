@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct PlaceJSON: Hashable, Codable {
     let name: String
@@ -24,7 +25,9 @@ class APIViewModel: ObservableObject {
     @Published var isLoading: Bool = true
     
     func fetchPlaces() {
-        guard let url = URL(string: "https://codename-chiven.glitch.me/places") else {
+        let serialized_url: String = "https://after-party.glitch.me/places/"
+        
+        guard let url = URL(string: serialized_url) else {
             return
         }
         

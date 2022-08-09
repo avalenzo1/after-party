@@ -44,7 +44,7 @@ class APIViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self?.places = places
                     self?.isLoading = false
-                    print("dog water")
+                    print("works")
                     print(self?.places)
                 }
             } catch {

@@ -42,8 +42,9 @@ struct HomeView: View {
                 Section(header: Text("Budget *")) {
                     // Budget Field
                     Text("Below are the types of Budget Inputs")
+                    Text("From $\(range.lowerBound) to $\(range.upperBound)")
                     
-                    RangeSlider(range: $range, in: 0...100, step: 1)
+                    RangeSlider(range: $range, in: 0...100, step: 10)
                 }
 
                 

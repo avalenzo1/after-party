@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "halfasheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/franklynw/HalfASheet",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "5d1ade1157f87c4f922f4aa1af318f53fa1a3764"
+      }
+    },
+    {
+      "identity" : "partialsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndreaMiotto/PartialSheet",
+      "state" : {
+        "branch" : "master",
+        "revision" : "415fafa8ed719613b3abc787d52a8aa32a4998b9"
+      }
+    },
+    {
+      "identity" : "swiftui-sliders",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/spacenation/swiftui-sliders",
+      "state" : {
+        "revision" : "5ba8614462a7ed4bd47a93fbca6c281599f74337",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

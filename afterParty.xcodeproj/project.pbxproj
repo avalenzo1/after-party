@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B035C98288765420046E0CA /* codenameChiventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codenameChiventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B035C98288765420046E0CA /* afterParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = afterParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B035C9B288765420046E0CA /* codenameChiventureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codenameChiventureApp.swift; sourceTree = "<group>"; };
 		4B035C9D288765420046E0CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B035C9F288765450046E0CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		4B035C99288765420046E0CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B035C98288765420046E0CA /* codenameChiventure.app */,
+				4B035C98288765420046E0CA /* afterParty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B035C97288765420046E0CA /* codenameChiventure */ = {
+		4B035C97288765420046E0CA /* afterParty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B035CA6288765450046E0CA /* Build configuration list for PBXNativeTarget "codenameChiventure" */;
+			buildConfigurationList = 4B035CA6288765450046E0CA /* Build configuration list for PBXNativeTarget "afterParty" */;
 			buildPhases = (
 				4B035C94288765420046E0CA /* Sources */,
 				4B035C95288765420046E0CA /* Frameworks */,
@@ -131,14 +131,14 @@
 			);
 			dependencies = (
 			);
-			name = codenameChiventure;
+			name = afterParty;
 			packageProductDependencies = (
 				4BB0E92528923761008DCF24 /* Sliders */,
 				4BA87D3428945CA900C95F3B /* HalfASheet */,
 				4B2A9CC7289461AA0024BFDC /* PartialSheet */,
 			);
 			productName = codenameChiventure;
-			productReference = 4B035C98288765420046E0CA /* codenameChiventure.app */;
+			productReference = 4B035C98288765420046E0CA /* afterParty.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B035C93288765420046E0CA /* Build configuration list for PBXProject "codenameChiventure" */;
+			buildConfigurationList = 4B035C93288765420046E0CA /* Build configuration list for PBXProject "afterParty" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -174,7 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B035C97288765420046E0CA /* codenameChiventure */,
+				4B035C97288765420046E0CA /* afterParty */,
 			);
 		};
 /* End PBXProject section */
@@ -341,7 +341,7 @@
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "After Party";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location to find places nearby";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -374,7 +374,7 @@
 				INFOPLIST_FILE = codenameChiventure/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "After Party";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to filter places close to you.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location to find places nearby";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -396,7 +396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B035C93288765420046E0CA /* Build configuration list for PBXProject "codenameChiventure" */ = {
+		4B035C93288765420046E0CA /* Build configuration list for PBXProject "afterParty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B035CA4288765450046E0CA /* Debug */,
@@ -405,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B035CA6288765450046E0CA /* Build configuration list for PBXNativeTarget "codenameChiventure" */ = {
+		4B035CA6288765450046E0CA /* Build configuration list for PBXNativeTarget "afterParty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B035CA7288765450046E0CA /* Debug */,

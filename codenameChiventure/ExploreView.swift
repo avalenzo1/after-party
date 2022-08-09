@@ -23,7 +23,7 @@ struct ExploreView: View {
             .onAppear {
                 apiViewModel.fetchPlaces()
             }
-            
+
             HStack {
                 Button {
                     isPresented = !isPresented
@@ -48,6 +48,9 @@ struct ExploreView: View {
             .frame(maxWidth: .infinity)
             .padding()
             .background(.thinMaterial)
+        }
+        .refreshable {
+            apiViewModel.fetchPlaces()
         }
         .sheet(isPresented: $isPresented, content: {
             ResultsView(apiViewModel: self.apiViewModel)
@@ -135,6 +138,9 @@ struct ResultsView: View {
                     .onAppear {
                         apiViewModel.fetchPlaces()
                         print("BRUH")
+                    }
+                    .refreshable {
+                        apiViewModel.fetchPlaces()
                     }
                 }
             }
